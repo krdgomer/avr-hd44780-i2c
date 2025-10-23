@@ -6,12 +6,10 @@ int main(void) {
     i2c_init();
     lcd_init();
     
-    // Basic text
     lcd_clear();
     lcd_set_cursor(0, 0);
-    lcd_print("Hello World!");
-    lcd_set_cursor(0, 1);
-    lcd_print("LCD I2C Test");
+    lcd_print("Row 0: Static");
+    lcd_sliding_text(1, "This text slides!");
     
     while (1) { }
 }

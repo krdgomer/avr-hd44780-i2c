@@ -3,9 +3,17 @@
 
 #include <avr/io.h>
 
+#ifndef F_CPU
+#define F_CPU 16000000UL
+#endif
+
+#define I2C_FREQ 100000UL // 100 kHz
+
 void i2c_init(void);
-void i2c_start(void);
+uint8_t i2c_start(void);
 void i2c_stop(void);
-void i2c_write(uint8_t data);
+uint8_t i2c_write(uint8_t data);
+uint8_t i2c_read_ack(void);
+uint8_t i2c_read_nack(void);
 
 #endif

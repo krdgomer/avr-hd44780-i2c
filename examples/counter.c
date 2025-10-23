@@ -6,12 +6,14 @@ int main(void) {
     i2c_init();
     lcd_init();
     
-    // Basic text
     lcd_clear();
     lcd_set_cursor(0, 0);
-    lcd_print("Hello World!");
-    lcd_set_cursor(0, 1);
-    lcd_print("LCD I2C Test");
+    lcd_print("Counter: ");
+    for (int i = 0; i < 50; i++) {
+        lcd_set_cursor(9, 0);
+        lcd_print_number(i);
+        _delay_ms(200);
+    }
     
     while (1) { }
 }

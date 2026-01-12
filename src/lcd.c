@@ -108,7 +108,7 @@ void lcd_create_char(uint8_t location, uint8_t charmap[]) {
 }
 
 void lcd_sliding_text(uint8_t row, const char *str) {
-    const uint16_t slideSpeed = 300;
+    const uint16_t slideSpeed = 1000;
     
     char padded_str[LCD_COLS + 64];
     // Pad with spaces equal to LCD width
